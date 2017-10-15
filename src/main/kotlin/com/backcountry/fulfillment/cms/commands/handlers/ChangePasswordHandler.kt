@@ -7,13 +7,11 @@ import com.backcountry.fulfillment.cms.events.PasswordChanged
 import com.backcountry.fulfillment.cms.repositories.CustomerRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
-import org.springframework.transaction.annotation.Transactional
 
 @Component
 class ChangePasswordHandler(@Autowired val customerRepository: CustomerRepository,
                             val eventBus: EventBus) : CommandHandler<ChangePassword> {
 
-    @Transactional
     @CommandListener
     override fun handle(command: ChangePassword) {
 

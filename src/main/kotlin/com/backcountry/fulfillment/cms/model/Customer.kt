@@ -14,7 +14,7 @@ class Customer(
         @Column(name="cust_fname") var firstName: String,
         @Column(name="cust_lname") var lastName: String,
         @Column(name="cust_password") var password: String? = null,
-        @Column(name="cust_active") var active: Boolean = true) {
+        @Column(name="cust_active") var active: Boolean = false) {
 
     constructor(command: CreateCustomer):this(
             command.email,
