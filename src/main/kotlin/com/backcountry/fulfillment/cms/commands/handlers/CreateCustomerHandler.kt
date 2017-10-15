@@ -2,6 +2,8 @@ package com.backcountry.fulfillment.cms.commands.handlers
 
 import com.backcountry.fulfillment.cms.commands.CreateCustomer
 import com.backcountry.fulfillment.cms.commands.CommandListener
+import com.backcountry.fulfillment.cms.events.CustomerCreated
+import com.backcountry.fulfillment.cms.events.EventBus
 import com.backcountry.fulfillment.cms.model.Customer
 import com.backcountry.fulfillment.cms.repositories.CustomerRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -9,7 +11,8 @@ import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
 
 @Component
-class AddCustomerHandler(@Autowired val customerRepository: CustomerRepository): CommandHandler<CreateCustomer> {
+class CreateCustomerHandler(@Autowired val customerRepository: CustomerRepository,
+                            val eventBus: EventBus): CommandHandler<CreateCustomer> {
 
     @Transactional
     @CommandListener
@@ -18,6 +21,7 @@ class AddCustomerHandler(@Autowired val customerRepository: CustomerRepository):
             throw RuntimeException("The customer ${command.email} already exists")
         }
         customerRepository.save(Customer(command))
+        eventBus.publishEvent(CustomerCreated(command))
     }
 
 }

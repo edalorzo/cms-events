@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController
 class CustomerController(@Autowired private val commandBus: CommandBus) {
 
     @PostMapping("/create-customer")
-    fun createCustomer(@RequestBody command: CreateCustomer){
+    fun createCustomer(@RequestBody command: CreateCustomer) {
         commandBus.publishCommand(command)
     }
 
