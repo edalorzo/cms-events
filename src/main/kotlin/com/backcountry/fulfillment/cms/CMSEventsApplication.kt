@@ -18,7 +18,7 @@ import org.springframework.transaction.PlatformTransactionManager
 import javax.persistence.EntityManagerFactory
 
 @SpringBootApplication
-class LearnEventsApplication
+class CMSEventsApplication
 
 @Configuration
 class LearnEventsApplicationConfiguration {
@@ -66,5 +66,5 @@ class LearnEventsApplicationConfiguration {
 
 
 fun main(args: Array<String>) {
-    SpringApplication.run(LearnEventsApplication::class.java, *args)
+    SpringApplication.run(CMSEventsApplication::class.java, *args)
 }
