@@ -1,19 +1,21 @@
 package com.backcountry.fulfillment.cms
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory
 import org.springframework.amqp.rabbit.connection.ConnectionFactory
 import org.springframework.amqp.rabbit.core.RabbitTemplate
+import org.springframework.amqp.rabbit.transaction.RabbitTransactionManager
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.autoconfigure.amqp.SimpleRabbitListenerContainerFactoryConfigurer
 import org.springframework.context.annotation.Bean
-import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter
 import org.springframework.context.annotation.Configuration
-import org.springframework.amqp.rabbit.transaction.RabbitTransactionManager
 import org.springframework.context.annotation.Primary
-import org.springframework.transaction.PlatformTransactionManager
-import org.springframework.orm.jpa.JpaTransactionManager
-import javax.persistence.EntityManagerFactory
 import org.springframework.data.transaction.ChainedTransactionManager
+import org.springframework.orm.jpa.JpaTransactionManager
+import org.springframework.transaction.PlatformTransactionManager
+import javax.persistence.EntityManagerFactory
 
 @SpringBootApplication
 class LearnEventsApplication
@@ -43,6 +45,22 @@ class LearnEventsApplicationConfiguration {
     fun transactionManager(jpaTransactionManager: PlatformTransactionManager,
                                   rabbitTransactionManager: PlatformTransactionManager): PlatformTransactionManager {
         return ChainedTransactionManager(rabbitTransactionManager, jpaTransactionManager)
+    }
+
+    @Bean
+    fun commandBus(configurer: SimpleRabbitListenerContainerFactoryConfigurer,
+                   connectionFactory: ConnectionFactory): SimpleRabbitListenerContainerFactory {
+
+        val factory = SimpleRabbitListenerContainerFactory()
+        configurer.configure(factory, connectionFactory)
+
+        factory.setConnectionFactory(connectionFactory)
+        factory.setAutoStartup(true)
+        factory.setConcurrentConsumers(1)
+        factory.setMaxConcurrentConsumers(1)
+        factory.setMessageConverter(Jackson2JsonMessageConverter(ObjectMapper()))
+
+        return factory
     }
 }
 

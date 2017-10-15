@@ -22,3 +22,11 @@ curl -i -X POST -d '{"email":"edwin@dalorzo.com", "password":"mazinger"}' -H "Ac
  ```bash
   curl -i -X POST -H "Content-Type: application/json" -H "Accept: application/json" -d '{"email":"edwin@dalorzo.com"}' http://localhost:8080/customer/deactivate
   ```
+  
+### TODOs
+
+* ~Implement remote command listener~
+* Deal with idempotency.
+* Deal with validation.
+* Implement Query side using controller.
+* Implement Query side using amqp. 

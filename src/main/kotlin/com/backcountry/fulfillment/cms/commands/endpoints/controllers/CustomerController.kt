@@ -1,4 +1,4 @@
-package com.backcountry.fulfillment.cms.controllers
+package com.backcountry.fulfillment.cms.commands.endpoints.controllers
 
 import com.backcountry.fulfillment.cms.commands.ActivateCustomer
 import com.backcountry.fulfillment.cms.commands.ChangePassword
