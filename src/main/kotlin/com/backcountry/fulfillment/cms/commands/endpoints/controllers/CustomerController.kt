@@ -1,10 +1,10 @@
 package com.backcountry.fulfillment.cms.commands.endpoints.controllers
 
-import com.backcountry.fulfillment.cms.commands.ActivateCustomer
-import com.backcountry.fulfillment.cms.commands.ChangePassword
-import com.backcountry.fulfillment.cms.commands.CreateCustomer
-import com.backcountry.fulfillment.cms.commands.DeactivateCustomer
-import com.backcountry.fulfillment.cms.commands.api.CommandBus
+import com.backcountry.fulfillment.cms.commands.CommandBus
+import com.backcountry.fulfillment.cqrs.commands.cms.ActivateCustomer
+import com.backcountry.fulfillment.cqrs.commands.cms.ChangePassword
+import com.backcountry.fulfillment.cqrs.commands.cms.CreateCustomer
+import com.backcountry.fulfillment.cqrs.commands.cms.DeactivateCustomer
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.bind.annotation.PostMapping

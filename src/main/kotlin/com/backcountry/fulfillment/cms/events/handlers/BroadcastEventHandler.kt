@@ -1,13 +1,14 @@
 package com.backcountry.fulfillment.cms.events.handlers
 
-import com.backcountry.fulfillment.cms.events.api.Event
-import com.backcountry.fulfillment.cms.events.api.EventHandler
+import com.backcountry.fulfillment.cqrs.events.api.Event
+import com.backcountry.fulfillment.cqrs.events.api.EventHandler
 import org.slf4j.LoggerFactory
 import org.springframework.amqp.rabbit.core.RabbitTemplate
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.event.EventListener
 import org.springframework.core.annotation.Order
 import org.springframework.stereotype.Component
+
 
 @Component
 class BroadcastEventHandler @Autowired constructor(

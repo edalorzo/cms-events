@@ -1,9 +1,9 @@
 package com.backcountry.fulfillment.cms.model
 
-import com.backcountry.fulfillment.cms.commands.ActivateCustomer
-import com.backcountry.fulfillment.cms.commands.ChangePassword
-import com.backcountry.fulfillment.cms.commands.CreateCustomer
-import com.backcountry.fulfillment.cms.commands.DeactivateCustomer
+import com.backcountry.fulfillment.cqrs.commands.cms.ActivateCustomer
+import com.backcountry.fulfillment.cqrs.commands.cms.ChangePassword
+import com.backcountry.fulfillment.cqrs.commands.cms.CreateCustomer
+import com.backcountry.fulfillment.cqrs.commands.cms.DeactivateCustomer
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id

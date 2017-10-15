@@ -1,12 +1,12 @@
 package com.backcountry.fulfillment.cms.commands.handlers
 
-import com.backcountry.fulfillment.cms.commands.CreateCustomer
-import com.backcountry.fulfillment.cms.commands.api.CommandHandler
-import com.backcountry.fulfillment.cms.commands.api.CommandListener
-import com.backcountry.fulfillment.cms.events.CustomerCreated
-import com.backcountry.fulfillment.cms.events.api.EventBus
+import com.backcountry.fulfillment.cms.commands.CommandListener
+import com.backcountry.fulfillment.cms.events.EventBus
 import com.backcountry.fulfillment.cms.model.Customer
 import com.backcountry.fulfillment.cms.repositories.CustomerRepository
+import com.backcountry.fulfillment.cqrs.commands.api.CommandHandler
+import com.backcountry.fulfillment.cqrs.commands.cms.CreateCustomer
+import com.backcountry.fulfillment.cqrs.events.cms.CustomerCreated
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 

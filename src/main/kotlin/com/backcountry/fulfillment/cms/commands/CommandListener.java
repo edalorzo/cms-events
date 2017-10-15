@@ -1,4 +1,4 @@
-package com.backcountry.fulfillment.cms.commands.api;
+package com.backcountry.fulfillment.cms.commands;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.core.annotation.AliasFor;

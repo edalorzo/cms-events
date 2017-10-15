@@ -1,7 +1,8 @@
 package com.backcountry.fulfillment.cms.events.handlers
 
-import com.backcountry.fulfillment.cms.events.api.Event
-import com.backcountry.fulfillment.cms.events.api.EventHandler
+
+import com.backcountry.fulfillment.cqrs.events.api.Event
+import com.backcountry.fulfillment.cqrs.events.api.EventHandler
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 import org.springframework.transaction.event.TransactionPhase.AFTER_COMPLETION
