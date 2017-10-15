@@ -17,7 +17,7 @@ class DeactivateCustomerHandler(@Autowired val customerRepository: CustomerRepos
     override fun handle(command: DeactivateCustomer) {
 
         customerRepository.findById(command.email)
-                .orElseThrow { RuntimeException("Customer not found for email ${command.email}") }
+                .orElseThrow { CustomerNotFoundException(command.email) }
                 .execute(command)
 
         eventBus.publishEvent(CustomerDeactivated(command))

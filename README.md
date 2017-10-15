@@ -26,7 +26,9 @@ curl -i -X POST -d '{"email":"edwin@dalorzo.com", "password":"mazinger"}' -H "Ac
 ### TODOs
 
 * ~Implement remote command listener~
-* Deal with idempotency.
+* ~Deal with idempotency~
+* ~Improve exception throwing~
+* Improve exception handling
 * Deal with validation.
 * Implement Query side using controller.
 * Implement Query side using amqp. 

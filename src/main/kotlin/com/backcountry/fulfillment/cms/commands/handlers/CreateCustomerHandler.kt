@@ -16,10 +16,9 @@ class CreateCustomerHandler(@Autowired val customerRepository: CustomerRepositor
 
     @CommandListener
     override fun handle(command: CreateCustomer) {
-        if(customerRepository.findById(command.email).isPresent) {
-            throw RuntimeException("The customer ${command.email} already exists")
+        if(!customerRepository.findById(command.email).isPresent) {
+            customerRepository.save(Customer(command))
         }
-        customerRepository.save(Customer(command))
         eventBus.publishEvent(CustomerCreated(command))
     }
 

@@ -6,10 +6,9 @@ import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonProperty
 
 data class PasswordChanged @JsonCreator constructor(
-        @JsonProperty("email") val email: String,
-        @JsonProperty("password") val password: String): Event {
+        @JsonProperty("email") val email: String): Event {
 
-    constructor(command: ChangePassword): this(command.email, command.password)
+    constructor(command: ChangePassword): this(command.email)
 
     override fun getRoutingKey() = "ffd.Customer.PasswordChanged";
 

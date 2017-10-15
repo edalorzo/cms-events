@@ -1,6 +1,6 @@
 package com.backcountry.fulfillment.cms.commands.api
 
-interface CommandHandler<T> where T: Command {
+interface CommandHandler<in T> where T: Command {
     
     fun handle(command: T)
 }
