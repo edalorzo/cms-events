@@ -48,7 +48,7 @@ class LearnEventsApplicationConfiguration {
     }
 
     @Bean
-    fun commandBus(configurer: SimpleRabbitListenerContainerFactoryConfigurer,
+    fun rabbitCommandBus(configurer: SimpleRabbitListenerContainerFactoryConfigurer,
                    connectionFactory: ConnectionFactory): SimpleRabbitListenerContainerFactory {
 
         val factory = SimpleRabbitListenerContainerFactory()

@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional
 
 @Transactional
 @Component
-@RabbitListener(queues = arrayOf("ffd.customer.commands"), containerFactory = "commandBus")
+@RabbitListener(queues = arrayOf("ffd.customer.commands"), containerFactory = "rabbitCommandBus")
 class CommandListener(@Autowired private val commandBus: CommandBus) {
 
     @RabbitHandler

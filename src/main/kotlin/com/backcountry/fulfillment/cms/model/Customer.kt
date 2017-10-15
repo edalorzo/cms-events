@@ -1,14 +1,16 @@
 package com.backcountry.fulfillment.cms.model
 
 import com.backcountry.fulfillment.cms.commands.ActivateCustomer
-import com.backcountry.fulfillment.cms.commands.CreateCustomer
 import com.backcountry.fulfillment.cms.commands.ChangePassword
+import com.backcountry.fulfillment.cms.commands.CreateCustomer
 import com.backcountry.fulfillment.cms.commands.DeactivateCustomer
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
+import javax.persistence.Table
 
 @Entity
+@Table(name = "customers")
 class Customer(
         @Id @Column(name="cust_email") var email: String,
         @Column(name="cust_fname") var firstName: String,
