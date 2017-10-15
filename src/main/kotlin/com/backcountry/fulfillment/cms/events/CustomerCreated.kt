@@ -1,6 +1,7 @@
 package com.backcountry.fulfillment.cms.events
 
 import com.backcountry.fulfillment.cms.commands.CreateCustomer
+import com.backcountry.fulfillment.cms.events.api.Event
 
 data class CustomerCreated (
         val email: String,

@@ -1,6 +1,7 @@
 package com.backcountry.fulfillment.cms.events.handlers
 
-import com.backcountry.fulfillment.cms.events.Event
+import com.backcountry.fulfillment.cms.events.api.Event
+import com.backcountry.fulfillment.cms.events.api.EventHandler
 import org.slf4j.LoggerFactory
 import org.springframework.amqp.rabbit.core.RabbitTemplate
 import org.springframework.beans.factory.annotation.Autowired

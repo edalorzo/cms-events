@@ -1,9 +1,10 @@
 package com.backcountry.fulfillment.cms.commands.handlers
 
 import com.backcountry.fulfillment.cms.commands.ChangePassword
-import com.backcountry.fulfillment.cms.commands.CommandListener
-import com.backcountry.fulfillment.cms.events.EventBus
+import com.backcountry.fulfillment.cms.commands.api.CommandHandler
+import com.backcountry.fulfillment.cms.commands.api.CommandListener
 import com.backcountry.fulfillment.cms.events.PasswordChanged
+import com.backcountry.fulfillment.cms.events.api.EventBus
 import com.backcountry.fulfillment.cms.repositories.CustomerRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component

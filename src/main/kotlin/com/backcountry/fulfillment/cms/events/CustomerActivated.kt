@@ -1,6 +1,7 @@
 package com.backcountry.fulfillment.cms.events
 
 import com.backcountry.fulfillment.cms.commands.ActivateCustomer
+import com.backcountry.fulfillment.cms.events.api.Event
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonProperty
 

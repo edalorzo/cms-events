@@ -1,4 +1,4 @@
-package com.backcountry.fulfillment.cms.commands
+package com.backcountry.fulfillment.cms.commands.api
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationEventPublisher
