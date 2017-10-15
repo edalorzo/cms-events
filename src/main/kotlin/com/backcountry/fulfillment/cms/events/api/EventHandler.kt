@@ -1,7 +1,7 @@
 package com.backcountry.fulfillment.cms.events.api
 
-interface EventHandler<T> where T: Event {
+interface EventHandler<in T> where T: Event {
 
-    fun handle(event: T);
+    fun handle(event: T)
 
 }

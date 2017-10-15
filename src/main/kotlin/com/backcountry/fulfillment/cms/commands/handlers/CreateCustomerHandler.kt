@@ -11,8 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
-class CreateCustomerHandler(@Autowired val customerRepository: CustomerRepository,
-                            val eventBus: EventBus): CommandHandler<CreateCustomer> {
+class CreateCustomerHandler @Autowired constructor(
+        private val customerRepository: CustomerRepository,
+        private val eventBus: EventBus): CommandHandler<CreateCustomer> {
 
     @CommandListener
     override fun handle(command: CreateCustomer) {

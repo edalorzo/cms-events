@@ -5,7 +5,8 @@ import com.backcountry.fulfillment.cms.events.api.Event
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonProperty
 
-data class CustomerActivated @JsonCreator constructor(@JsonProperty("email") val email: String): Event {
+data class CustomerActivated @JsonCreator constructor(
+        @JsonProperty("email") val email: String): Event {
 
     constructor(command: ActivateCustomer): this(command.email)
 

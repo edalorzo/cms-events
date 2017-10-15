@@ -21,7 +21,7 @@ import javax.persistence.EntityManagerFactory
 class CMSEventsApplication
 
 @Configuration
-class LearnEventsApplicationConfiguration {
+class CMSEventsApplicationConfiguration {
 
     @Bean
     fun rabbitTemplate(connectionFactory: ConnectionFactory): RabbitTemplate {

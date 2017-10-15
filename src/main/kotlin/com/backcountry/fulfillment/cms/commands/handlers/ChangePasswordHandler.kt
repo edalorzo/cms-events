@@ -10,8 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
-class ChangePasswordHandler(@Autowired val customerRepository: CustomerRepository,
-                            val eventBus: EventBus) : CommandHandler<ChangePassword> {
+class ChangePasswordHandler @Autowired constructor(
+        private val customerRepository: CustomerRepository,
+        private val eventBus: EventBus) : CommandHandler<ChangePassword> {
 
     @CommandListener
     override fun handle(command: ChangePassword) {

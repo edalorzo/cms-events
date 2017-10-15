@@ -10,8 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
-class ActivateCustomerHandler(@Autowired val customerRepository: CustomerRepository,
-                              val eventBus: EventBus): CommandHandler<ActivateCustomer> {
+class ActivateCustomerHandler @Autowired constructor(
+        private val customerRepository: CustomerRepository,
+        private val eventBus: EventBus): CommandHandler<ActivateCustomer> {
 
     @CommandListener
     override fun handle(command: ActivateCustomer) {

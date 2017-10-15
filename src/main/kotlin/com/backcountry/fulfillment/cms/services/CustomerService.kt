@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
-class CustomerService(@Autowired val customerRepository: CustomerRepository) {
+class CustomerService @Autowired constructor(private val customerRepository: CustomerRepository) {
 
 
 
