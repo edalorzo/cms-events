@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController
 @Transactional
 @RestController
 @RequestMapping("/customer")
-class CustomerController(@Autowired private val commandBus: CommandBus) {
+class CustomerController @Autowired constructor(private val commandBus: CommandBus) {
 
     @PostMapping("/create-customer")
     fun createCustomer(@RequestBody command: CreateCustomer) {
