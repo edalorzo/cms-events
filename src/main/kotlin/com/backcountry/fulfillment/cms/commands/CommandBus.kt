@@ -13,5 +13,9 @@ class CommandBus @Autowired constructor(private val publisher: ApplicationEventP
         Objects.requireNonNull(command, "The command must not be null")
         publisher.publishEvent(command)
     }
+    
+    fun publishRemote(command: Command) {
+        //TODO do some remote publishing
+    }
 
 }
