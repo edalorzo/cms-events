@@ -15,7 +15,7 @@ class CommandBus @Autowired constructor(private val publisher: ApplicationEventP
         publisher.publishEvent(command)
     }
 
-    fun publishCommand(command: RemoteCommand) {
+    fun publishCommand(commnd: RemoteCommand) {
         //TODO send the remote command
     }
 
