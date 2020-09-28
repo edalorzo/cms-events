@@ -32,3 +32,9 @@ curl -i -X POST -d '{"email":"edwin@dalorzo.com", "password":"mazinger"}' -H "Ac
 * Deal with validation.
 * Implement Query side using controller.
 * Implement Query side using amqp. 
+* Errors as first class citizens.
+* Payload propagation between commands, events and errors.
+* Leverage metadata for code generation!
+* Orchestration with Process Manager/Mediator
+* Transactions with Sagas/Compensating logic.
+* How to deal with legacy.

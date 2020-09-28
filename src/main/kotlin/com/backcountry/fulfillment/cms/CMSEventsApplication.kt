@@ -57,6 +57,7 @@ class CMSEventsApplicationConfiguration {
         factory.setConnectionFactory(connectionFactory)
         factory.setAutoStartup(true)
         factory.setConcurrentConsumers(1)
+        factory.setPrefetchCount(1)
         factory.setMaxConcurrentConsumers(1)
         factory.setMessageConverter(Jackson2JsonMessageConverter(ObjectMapper()))
 
